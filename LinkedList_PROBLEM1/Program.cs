@@ -9,9 +9,9 @@ namespace LinkedList_PROBLEM1
             Console.WriteLine("----------Welcome to Linked List Problem----------");
             // use case 1
             LinkedList list = new LinkedList { };
-            list.Add(56);
-            list.Add(30);
             list.Add(70);
+            list.Add(30);
+            list.Add(56);
             list.Display();
 
         }
