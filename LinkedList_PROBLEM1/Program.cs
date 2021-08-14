@@ -14,6 +14,8 @@ namespace LinkedList_PROBLEM1
             list.InsertAtParticularPosition(2, 30);
             list.pop();
             list.Display();
+            list.PopLast();
+            list.Display();
 
         }
     }
