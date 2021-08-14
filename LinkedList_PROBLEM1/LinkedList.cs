@@ -8,6 +8,7 @@ namespace LinkedList_PROBLEM1
     {
 
         internal Node head;
+
         internal void Add(int data)
         {
             Node node = new Node(data);
@@ -69,6 +70,21 @@ namespace LinkedList_PROBLEM1
             Console.WriteLine("Insterted Line Value is " + data);
             return head;
         }
+       
+        internal Node pop()
+        {
+            if (this.head== null)
+            {
+                return null;
+
+            }
+            this.head = this.head.next;
+            return this.head;
+        }
+
+
+        
+
 
 
 
