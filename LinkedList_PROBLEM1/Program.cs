@@ -12,10 +12,15 @@ namespace LinkedList_PROBLEM1
             list.Add(56);
             list.Add(70);
             list.InsertAtParticularPosition(2, 30);
-            list.pop();
             list.Display();
-            list.PopLast();
-            list.Display();
+            if (list.search(list.head, 30))
+                Console.WriteLine("Yes");
+            else
+                Console.WriteLine("No");
+
+
+
+
 
         }
     }

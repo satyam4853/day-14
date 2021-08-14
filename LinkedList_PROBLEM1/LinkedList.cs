@@ -102,8 +102,20 @@ namespace LinkedList_PROBLEM1
 
         }
 
+     
 
-        
+        public bool search(Node head, int x)
+        {
+            Node current = head; // Initialize current
+            while (current != null)
+            {
+                if (current.data == x)
+                    return true; // data found
+                current = current.next;
+            }
+            return false; // data not found
+        }
+
 
 
 
