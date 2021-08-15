@@ -9,6 +9,8 @@ namespace LinkedList_PROBLEM1
 
         public int data;
         public Node next;
+        internal int val;
+
         public Node(int data)
         {
             this.data = data;
