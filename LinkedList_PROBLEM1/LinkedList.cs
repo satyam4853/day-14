@@ -70,6 +70,54 @@ namespace LinkedList_PROBLEM1
                 temp.next = node;
             }
         }
+      public  void deleteNode(int key)
+        {
+            // Store head node
+            Node temp = head, prev = null;
+
+            // If head node itself holds
+            // the key to be deleted
+            if (temp != null &&
+                temp.data == key)
+            {
+                // Changed head
+                head = temp.next;
+                return;
+            }
+
+            // Search for the key to be
+            // deleted, keep track of the
+            // previous node as we need
+            // to change temp.next
+            while (temp != null &&
+                   temp.data != key)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+
+            // If key was not present
+            // in linked list
+            if (temp == null)
+                return;
+
+            // Unlink the node from linked list
+            prev.next = temp.next;
+        }
+
+        public int getCount()
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
+
+
 
         internal Node pop()
         {
