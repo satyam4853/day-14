@@ -27,6 +27,8 @@ namespace LinkedList_PROBLEM1
             }
             Console.WriteLine("{0} Inserted Into Linked List ", node.data);
         }
+
+       
         internal void Display()
         {
             Node temp = this.head;
@@ -41,39 +43,37 @@ namespace LinkedList_PROBLEM1
                 temp = temp.next;
             }
         }
-        internal Node InsertAtParticularPosition(int position, int data)
+        public void Insert(int position, int data)
         {
-            if (position < 1)
-                Console.WriteLine("Invalid Position");
+            Node node = new Node(data);
+
             if (position == 1)
             {
-                var newNode = new Node(data);
-                newNode.next = this.head;
-                head = newNode;
+                node.next = head;
+                head = node;
             }
+            else if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+
             else
             {
-                while (position-- != 0)
+                Node temp = head;
+
+                while (position > 2)
                 {
-                    if (position == 1)
-                    {
-                        Node node = new Node(data);
-                        node.next = this.head.next;
-                        head.next = node;
-                        break;
-                    }
-                    head = head.next;
+                    temp = temp.next;
+                    position--;
                 }
-                if (position != 1)
-                    Console.WriteLine("position out of range");
+                node.next = temp.next;
+                temp.next = node;
             }
-            Console.WriteLine("Insterted Line Value is " + data);
-            return head;
         }
-       
+
         internal Node pop()
         {
-            if (this.head== null)
+            if (this.head == null)
             {
                 return null;
 
@@ -83,7 +83,7 @@ namespace LinkedList_PROBLEM1
         }
         internal Node PopLast()
         {
-            if (head==null)
+            if (head == null)
             {
                 return null;
 
@@ -93,7 +93,7 @@ namespace LinkedList_PROBLEM1
                 return null;
             }
             Node NewNode = head;
-            while(NewNode.next.next != null)
+            while (NewNode.next.next != null)
             {
                 NewNode = NewNode.next;
             }
@@ -102,23 +102,29 @@ namespace LinkedList_PROBLEM1
 
         }
 
-     
+        
 
-        public bool search(Node head, int x)
-        {
-            Node current = head; // Initialize current
-            while (current != null)
+
+
+
+
+
+           public  bool search(Node head, int x)
             {
-                if (current.data == x)
-                    return true; // data found
-                current = current.next;
+                Node current = head; // Initialize current
+                while (current != null)
+                {
+                    if (current.data == x)
+                        return true; // data found
+                    current = current.next;
+                }
+                return false; // data not found
             }
-            return false; // data not found
+
+
+
+
+
         }
-
-
-
-
-
     }
-}
+

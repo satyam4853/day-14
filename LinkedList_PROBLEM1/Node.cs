@@ -12,7 +12,10 @@ namespace LinkedList_PROBLEM1
         public Node(int data)
         {
             this.data = data;
+            
         }
 
+
+       
     }
 }
